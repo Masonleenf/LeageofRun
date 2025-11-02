@@ -156,6 +156,40 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 16),
 
+                // Divider
+                Row(
+                  children: const [
+                    Expanded(child: Divider()),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Text('OR', style: TextStyle(color: Colors.grey)),
+                    ),
+                    Expanded(child: Divider()),
+                  ],
+                ),
+                const SizedBox(height: 16),
+
+                // Google Login button (temporary - goes directly to home)
+                OutlinedButton.icon(
+                  onPressed: () {
+                    // TODO: Implement Google OAuth
+                    // For now, navigate directly to home screen
+                    Navigator.of(context).pushReplacementNamed('/home');
+                  },
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  icon: const Icon(Icons.g_mobiledata, size: 32),
+                  label: const Text(
+                    'Continue with Google',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+                const SizedBox(height: 16),
+
                 // Register link
                 TextButton(
                   onPressed: () {
